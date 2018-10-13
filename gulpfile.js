@@ -69,12 +69,10 @@ gulp.task('server', () => {
 						'^/lagou': ''
 					}
 				}),
-				proxy('/v4/api/', {
+				proxy('/v4', {
 					target: 'https://m.maizuo.com',
 					changeOrigin: true,
-					pathRewrite: {
-						'^/v4/api/': ''
-					}
+					
 				}),
 			]
 		}))
@@ -115,15 +113,12 @@ gulp.task('watch', () => {
 	gulp.watch('./src/*.html', ['copyhtml'])
 	// gulp-watch,实现文件的创建，修改，删除 watch
 	// 缺点：某些操作系统不支持
-	watch('./src/styles/**/*', () => {
-		gulp.start(['packscss'])
-	})
-	watch('./src/libs/**/*', () => {
-		gulp.start(['copylibs'])
-	})
-	watch('./src/images/**/*', () => {
-		gulp.start(['copyimages'])
-	})
+	gulp.watch('./src/styles/**/*', ['packscss'])
+	gulp.watch('./src/libs/**/*',['copylibs'])
+	gulp.watch('./src/images/**/*', ['copyimages'])
+	//gulp.watch('./src/styles/**/*', ['packscss'])
+	
+	
 	// watch('./src/mock/**/*', () => {
 	//   gulp.start(['copymock'])
 	// })

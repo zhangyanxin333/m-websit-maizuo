@@ -2,11 +2,12 @@
     main{
         @include flexbox();
         @include flex-direction(column);
-        >div{
-            padding: .18rem;            
+        .movie-total{
+            padding: .18rem;
             .movie-item{
                 width:3.41rem;
-                height: 1.92rem;
+                height: 2.42rem;
+                margin-bottom:.15rem;
                 div:first-child{
                     width:100%;
                     img{
@@ -27,7 +28,7 @@
                             font-size:.12rem;
                             font-weight: normal;
                             line-height: .15rem;
-                            color: #9a9a9a;
+                            color: #333;
                         }
                         div{
                             //@include flexbox;

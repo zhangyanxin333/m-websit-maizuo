@@ -1,21 +1,25 @@
-<div>
+<div class="movie-total">
+    {{#each moviesList}}
     <div class="movie-item">
+            
         <div>
             <img src="https://pic.maizuo.com/usr/movie/2d37947e99fb26433bd5e784161d79ff.jpg">
         </div>
         <div>
             <div>
-                <h4>无双</h4>
+                <h4>{{name}}</h4>
                 <div>
-                    <span>149</span>
+                    <span>{{cinemaCount}}</span>
                     <span>家影院上映</span>
-                    <span>0</span>
+                    <span>{{scheduleCount}}</span>
                     <span>人购票</span>
                 </div>
             </div>
             <div class="rights">
-                <span>8.4</span>
+                <span>{{grade}}</span>
             </div>
         </div>
+        
     </div>
+    {{/each}}
 </div>
