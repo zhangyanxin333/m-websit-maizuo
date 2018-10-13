@@ -123,7 +123,7 @@ gulp.task('watch', () => {
 	//   gulp.start(['copymock'])
 	// })
 	gulp.watch('./src/scripts/**/*', ['packjs'])
-})
+}) 
 
 // default task
 gulp.task('default', ['packscss', 'packjs', 'copyhtml', 'copyicons', 'copylibs', 'copyimages', 'server', 'watch'], () => {
