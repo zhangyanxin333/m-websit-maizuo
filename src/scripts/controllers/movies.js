@@ -1,10 +1,6 @@
 import movieTpl from "../views/movies.html";
 import movieModel from "../models/movies";
 
-const render = ()=>{
-    $("main").html(movieTpl);
-}
-
 const render = async() => {
     let result = await movieModel.list();
     let moviesList = result.data.films;
