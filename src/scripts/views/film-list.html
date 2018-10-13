@@ -1,0 +1,18 @@
+{{#each list}}
+<li>
+    <div>
+        <img src="{{poster.origin}}" alt="">
+    </div>
+    <div>
+        <div>
+            <h2>{{name}}</h2>
+            <span>{{grade}}<i class="yo-ico">&#xe60d;</i></span>
+        </div>
+        <h3>{{intro}}</h3>
+        <h4>
+            <span>{{cinemaCount}}</span>家影院上映&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>{{watchCount}}</span>人购票
+        </h4>
+    </div>
+</li>
+{{/each}}
