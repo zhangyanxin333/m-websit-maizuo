@@ -15,7 +15,7 @@
     height: 100%;
     @include flexbox();
     @include flex-direction(column);
-    nav {
+    .head {
       height: .5rem;
       background: #282828; 
       //font-size: .18rem;
@@ -78,5 +78,86 @@
         
         
       }
+      .sidebar{
+        display: none;
+        width:2.65rem;
+        height: 6.17rem;
+        background:#282828;
+        top: .50rem;
+        left: 0;
+        color:#9a9a9a;
+        @include border(1px 0 0 0,#222);
+        box-shadow: 0 1px 1px #363636 inset;
+        position: absolute;   
+        z-index: 10;      
+        ul{
+            display: block;
+            //@include flex-direction();
+            //@include flex();
+            li{
+                line-height: .18rem;
+                display: block;
+                width:100%;
+                padding:.16rem;
+                text-align: left;
+                @include border(0 0 1px 0,#333,dotted);
+                span{
+                    font-size:.14rem;
+                }
+                i{
+                    float:right;
+                }
+                
+            }
+            li:first-child{
+                i{
+                    font-size: .14rem;
+                    color:#666;
+                    //@include transform(scale(.9));
+                    //@include transform-origin(0 0);
+                }
+            }
+            li:nth-child(2){
+                color: #9a9a9a;
+                i{
+                    font-size: .14rem;
+                    color:#666;
+                }
+            }                    
+            li:nth-child(3){
+                width:100%;  
+                i{
+                    font-size: .14rem;
+                    color:#666;                            
+                }          
+            }
+            li:nth-child(4){
+                width:100%; 
+                i{
+                    display: inline-block;
+                    line-height: .18rem;
+                    font-size: .14rem;
+                    @include transform(scale(1));
+                    margin-left:0;
+                    color:#666;                            
+                }
+            }
+            li:nth-child(5){
+                width:100%; 
+                i{
+                    color:#666;                            
+                    display: inline-block;
+                    line-height: .18rem;
+                    font-size: .14rem;
+                    @include transform(scale(1))
+                }
+            }
+            li:nth-child(6){
+                i{
+                    color:#666;                            
+                }
+            }
+        }
     }
+  }
 

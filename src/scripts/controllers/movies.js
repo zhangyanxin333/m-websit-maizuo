@@ -7,8 +7,16 @@ const render = async() => {
     let template = Handlebars.compile(movieTpl);
     let html = template({ moviesList })
     $("main").html(html)
+    scroll();
 }
 
 export default {
     render
+}
+
+const scroll = () => {
+    let movScroll = new BScroll("main",{
+        probeType: 2,
+        startY: 0
+    });
 }

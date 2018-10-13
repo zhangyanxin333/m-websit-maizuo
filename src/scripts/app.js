@@ -3,6 +3,6 @@ import moviesController from "./controllers/movies";
 import filmConstroller from "./controllers/film"
 
 homeController.render();
-// moviesController.render();
-filmConstroller.render();
+moviesController.render();
+//filmConstroller.render();
 
