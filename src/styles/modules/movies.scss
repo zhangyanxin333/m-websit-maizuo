@@ -2,7 +2,7 @@
     main{
         @include flexbox();
         @include flex-direction(column);
-        >div{
+        .movie-total{
             padding: .18rem;            
             .movie-item{
                 width:3.41rem;
