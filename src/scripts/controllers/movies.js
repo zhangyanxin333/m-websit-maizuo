@@ -14,7 +14,6 @@ const render = async() => {
     let upcoming = list.data.films;
     let template1 = Handlebars.compile(nextMovieTpl);
     let html1 = template1({ upcoming });
-    //$("main").html(html);
     $("main>div").append(html1);
     scroll();
     jumpDetail();
@@ -31,35 +30,27 @@ const scroll = () => {
     });
 }
 const jumpDetail = () => {
-    console.log($(".movie-item"))
     $(".movie-item").on("tap",function(){
         var movieId = $(this).attr("data-id");
-        console.log(movieId)
         $.ajax({
             url:"/v4/api/film/"+movieId+"?__t=1539476559380",
             success:(data) => {
-                console.log(data);
                 let filmdetail = data.data.film;
                 let template = Handlebars.compile(detailTpl);
                 let html = template(filmdetail)
                 $("main>div").html(html)
-                //return data;
             }
         })
     })
-    console.log($(".comingSoon"))
     $(".movie-list").on("tap",function(){
         var movieId = $(this).attr("data-id");
-        console.log(movieId)
         $.ajax({
             url:"/v4/api/film/"+movieId+"?__t=1539476559380",
             success:(data) => {
-                console.log(data);
                 let filmdetail = data.data.film;
                 let template = Handlebars.compile(detailTpl);
                 let html = template(filmdetail)
                 $("main>div").html(html)
-                //return data;
             }
         })
     })

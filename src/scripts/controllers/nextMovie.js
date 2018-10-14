@@ -5,7 +5,6 @@ const render = async() => {
     let upcoming = list.data.films;
     let template = Handlebars.compile(nextMovieTpl);
     let html = template({ upcoming });
-    //$("main").html(html);
     $("main>div").append(html);
 }
 

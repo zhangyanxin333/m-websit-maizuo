@@ -5,7 +5,6 @@ import Router from "../utils/router"
 
 const render = async() => {
     await $("main").html(filmTpl);
-    // location.hash = "#film/nowplaying"
     nowplayingConstroller.render();
     changeTab()
 }

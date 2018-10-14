@@ -7,7 +7,6 @@ var pageNo = 1
 const render = async() => {
     let filmList = datasource = (await filmModel.nowlist()).data.films;
     await renderList(filmList)
-    console.log(filmList);
     scroll();
 }
 

@@ -8,8 +8,8 @@ import detailController from "./controllers/detail";
 import Router from "./utils/router"
 
 homeController.render();
-moviesController.render();
-nextMovieConstroller.render(); 
+// moviesController.render();
+// nextMovieConstroller.render(); 
 //filmConstroller.render();
 //detailController.render();
 
