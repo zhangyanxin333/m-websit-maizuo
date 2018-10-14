@@ -1,0 +1,77 @@
+.home-container {
+    main {
+        width: 100%;
+        overflow: hidden;
+        div{
+
+       
+            .detail {
+                height: 100%;
+
+                section {
+                    width: 3.75rem;
+
+                    .filmwrap {
+                        width: 3.75rem;
+                        height: 2.11rem;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .filminfo {
+                        @include flex();
+                        width: 3.75rem;
+
+                        div {
+                            height: .18rem;
+                            width: 100%;
+                            margin-bottom: .1rem;
+                            padding-left: .2rem;
+                            font-size: .12rem;
+                        }
+
+                        div:first-child {
+                            margin: .16rem auto;
+                            border-left: .16rem solid RGB(228, 200, 156);
+                            font-size: .16rem;
+                            padding-left: .04rem;
+                        }
+
+                        div:nth-child(3) {
+                            height: auto;
+                        }
+
+                        div:nth-child(7) {
+                            height: auto;
+                        }
+                    }
+                    
+                }
+            }
+            .opration {
+                position: fixed;
+                left: 0;
+                bottom: .2rem;
+                width: 100%;
+                text-align: center;
+
+                button {
+                    font-size: .14rem;
+                    min-width: 1.56rem;
+                    height: .36rem;
+                    line-height: .36rem;
+                    border: none;
+                    background-color: #fe8233;
+                    padding: 0;
+                    margin: 0;
+                    border-radius: .18rem;
+                    color: #fff;
+                    //-webkit-transition: 0.5s ease;
+                }
+            }
+        }
+    }
+}

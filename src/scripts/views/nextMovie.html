@@ -1,0 +1,26 @@
+<div class="diving-line">
+    <div class="upcoming">
+        即将上映
+    </div>
+</div>
+<div class="comingSoon">
+     {{#each upcoming}}
+    <div class="movie-list" data-id={{id}}>
+        <div>
+            <img src={{cover.origin}}>
+        </div>
+        <div>
+            <div>
+                {{name}}
+            </div>
+            <div class="comingRight">
+                12月7日上映
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+    <div class="more-button">
+        更多即将上映电影
+    </div>
+</div>
