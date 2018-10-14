@@ -3,11 +3,15 @@ import moviesController from "./controllers/movies";
 import filmConstroller from "./controllers/film"
 import nowplayingConstroller from "./controllers/nowplaying"
 import comingsoonConstroller from "./controllers/comingsoon"
+import nextMovieConstroller from "./controllers/nextMovie";
+import detailController from "./controllers/detail";
 import Router from "./utils/router"
 
 homeController.render();
-// moviesController.render();
-// filmConstroller.render();
+moviesController.render();
+nextMovieConstroller.render(); 
+//filmConstroller.render();
+//detailController.render();
 
 const router = new Router();
 router.init();
