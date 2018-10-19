@@ -2,10 +2,10 @@ import detailTpl from "../views/detail.html";
 import detailModel from "../models/detail";
 
 const render = async () => {
-    let data = await detailModel.list();
-    let filmdetail = data.data.film;
+    let movieId = location.hash.slice(1)
+    let result =(await detailModel.list(movieId)).data.film
     let template = Handlebars.compile(detailTpl);
-    let html = template(filmdetail)
+    let html = template(result)
     $("main>div").html(html)
 }
 

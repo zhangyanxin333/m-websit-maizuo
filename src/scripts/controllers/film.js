@@ -6,12 +6,13 @@ import Router from "../utils/router"
 const render = async() => {
     await $("main").html(filmTpl);
     nowplayingConstroller.render();
+    location.hash = "#film/nowplaying"
     changeTab()
 }
 
 const changeTab = ()=>{
     $(".title>span").on("tap",function(){
-        let hashs = ['#film', '#film/comingsoon']
+        let hashs = ['#film/nowplaying', '#film/comingsoon']
         location.hash = hashs[$(this).index()]
     })
 }

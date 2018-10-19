@@ -1,3 +1,4 @@
+import filmTpl from "../views/film.html";
 import nowplayingTpl from "../views/nowplaying.html";
 import filmModel from "../models/film";
 
@@ -5,9 +6,11 @@ var datasource = []
 var pageNo = 1
 
 const render = async() => {
+    await $("main").html(filmTpl);
     let filmList = datasource = (await filmModel.nowlist()).data.films;
     await renderList(filmList)
     scroll();
+    changeTab()
 }
 
 const scroll = ()=>{
@@ -46,9 +49,16 @@ const scroll = ()=>{
             renderList(list)
             this.refresh()
             footImg.attr("src","/images/arrow.png").removeClass('down')
-            this.scrollTo(0, this.maxScrollY + 40,1000)
+            this.scrollTo(0, this.y,500)
         }
 
+    })
+}
+
+const changeTab = ()=>{
+    $(".title>span").on("tap",function(){
+        let hashs = ['#film/nowplaying', '#film/comingsoon']
+        location.hash = hashs[$(this).index()]
     })
 }
 

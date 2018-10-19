@@ -1,9 +1,10 @@
 import movieTpl from "../views/movies.html";
-import movieModel from "../models/movies";
-import detailTpl from "../views/detail.html";
-import nextModel from "../models/nextMovie";
 import nextMovieTpl from "../views/nextMovie.html";
-
+import movieModel from "../models/movies";
+import nextModel from "../models/nextMovie";
+import detailController from "../controllers/detail";
+import Router from "../utils/router"
+import filmConstroller from "../controllers/film"
 const render = async() => {
     let result = await movieModel.list();
     let moviesList = result.data.films;
@@ -16,11 +17,7 @@ const render = async() => {
     let html1 = template1({ upcoming });
     $("main>div").append(html1);
     scroll();
-    jumpDetail();
-}
-
-export default {
-    render
+    rooters();
 }
 
 const scroll = () => {
@@ -29,29 +26,19 @@ const scroll = () => {
         startY: 0
     });
 }
-const jumpDetail = () => {
-    $(".movie-item").on("tap",function(){
-        var movieId = $(this).attr("data-id");
-        $.ajax({
-            url:"/v4/api/film/"+movieId+"?__t=1539476559380",
-            success:(data) => {
-                let filmdetail = data.data.film;
-                let template = Handlebars.compile(detailTpl);
-                let html = template(filmdetail)
-                $("main>div").html(html)
-            }
-        })
+
+//注册路由
+const rooters = ()=>{
+    $(".movie-item,.movie-list").on("tap", async function(){
+        let movieId = $(this).attr("data-id");
+        location.hash = "#"+movieId;
+
+        const router = new Router();
+        router.init();
+        router.route(`#${movieId}`,detailController.render)
     })
-    $(".movie-list").on("tap",function(){
-        var movieId = $(this).attr("data-id");
-        $.ajax({
-            url:"/v4/api/film/"+movieId+"?__t=1539476559380",
-            success:(data) => {
-                let filmdetail = data.data.film;
-                let template = Handlebars.compile(detailTpl);
-                let html = template(filmdetail)
-                $("main>div").html(html)
-            }
-        })
-    })
+}
+
+export default {
+    render
 }

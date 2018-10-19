@@ -9,19 +9,21 @@ var noop = function(){}
 Router.prototype.route = function(hash,cb){
     this.currentHash = hash;
     this.routes[this.currentHash] = cb || noop
+    // console.log("注册了路由")
 }
 
 //路由舒刷新
 Router.prototype.refresh = function(){
     let hash = location.hash || "#movies"
     this.currentHash = hash
+    // console.log(this.routes)
     this.routes[this.currentHash]()
     this.switchTabbar()
 }
 
 //tabbar switch
 Router.prototype.switchTabbar = function(){
-    let hashs = ['#film', '#film/comingsoon']
+    let hashs = ['#film/nowplaying', '#film/comingsoon']
     let index = hashs.indexOf(this.currentHash)
     $('.title>span').eq(index).addClass('active').siblings().removeClass('active')
 }
@@ -32,5 +34,4 @@ Router.prototype.init = function () {
     window.addEventListener('hashchange', this.refresh.bind(this))
 }
 
-// export default Router
 export default Router
