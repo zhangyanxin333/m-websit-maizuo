@@ -1,0 +1,98 @@
+.home-container {
+    main {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #f6f6f6;
+        div{
+            /* width:100%;
+            height: 100%; */
+            section{
+                width:100%;
+                .login-form{
+                    height: 1.97rem;
+                    width:100%;
+                    form{
+                        padding:0 0.31rem;
+                        height: 100%;
+                        div:first-child{
+                            top:.3rem;
+                            position: relative;
+                            input{
+                                border: none;
+                                background-color: #f6f6f6;
+                                border-radius: 0rem;
+                                box-shadow: none;
+                                outline: none;
+                                font-size:.14rem;
+                                height: .34rem;
+                                padding: 0.06rem 0.12rem;
+                                position: absolute;
+                                top:-0.23rem;
+                            }
+                            span{
+                                width: .95rem;
+                                position: absolute;
+                                right: .05rem;
+                                top: -.25rem;
+                                background-color: #29a097;
+                                color: #fff;
+                                height: .30rem;
+                                line-height: .30rem;
+                                text-align: center;
+                                border-radius: .03rem;
+                                display: none;
+                                cursor: pointer;
+                                .ico{
+                                    left: -.06rem;
+                                    position: absolute;
+                                    top: .08rem;
+                                    content: '';
+                                    width: 0;
+                                    height: 0;
+                                    border-top: solid .06rem transparent;
+                                    border-bottom: solid .06rem transparent;
+                                    border-right: solid .06rem #29a097;
+                                    display: block;
+                                }
+                            }
+                            div{
+                                position: absolute;
+                                top: .2rem;
+                                height: .12rem;
+                                width: 100%;
+                                border: solid #c4c4c4;
+                                border-width: 0 .01rem .01rem .01rem;
+                            }
+                        }
+                        div:last-child{
+                            top:1rem;
+                            position: relative;
+                            input{
+                                border: none;
+                                background-color: #f6f6f6;
+                                border-radius: 0rem;
+                                box-shadow: none;
+                                outline: none;
+                                font-size:.14rem;
+                                height: .34rem;
+                                padding: 0.06rem 0.12rem;
+                                position: absolute;
+                                top:-0.23rem;
+                            }
+                            div{
+                                position: absolute;
+                                top: .2rem;
+                                height: .12rem;
+                                width: 100%;
+                                border: solid #c4c4c4;
+                                border-width: 0 .01rem .01rem .01rem;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
