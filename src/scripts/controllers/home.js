@@ -10,7 +10,7 @@ const changeTab = ()=>{
         $(".sidebar").toggle();
     })
     $(".sidebar>ul>li").on("tap",function(){
-        let hashs = ['#movies', '#film/nowplaying']
+        let hashs = ['#movies', '#film/nowplaying',"","","#login"]
         location.hash = hashs[$(this).index()]
         $(".sidebar").toggle();
     })
